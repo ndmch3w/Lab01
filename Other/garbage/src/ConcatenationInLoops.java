@@ -8,7 +8,7 @@ public class ConcatenationInLoops {
         for (int i=0; i<65536; i++){
             s += r.nextInt(2);
         }
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println("Time: " + (System.currentTimeMillis() - start));
 
         r = new Random(123);
         start = System.currentTimeMillis();
@@ -16,6 +16,6 @@ public class ConcatenationInLoops {
         for (int i=0; i<65536; i++) {
             sb.append(r.nextInt(2));
         }
-        System.out.println(System.currentTimeMillis() - start);
+        System.out.println("Time: " + (System.currentTimeMillis() - start));
     }
 }
