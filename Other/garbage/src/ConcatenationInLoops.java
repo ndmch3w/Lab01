@@ -16,6 +16,6 @@ public class ConcatenationInLoops {
         for (int i=0; i<65536; i++) {
             sb.append(r.nextInt(2));
         }
-        System.out.println("Time: " + (System.currentTimeMillis() - start));
+        System.out.println("Upgraded time: " + (System.currentTimeMillis() - start));
     }
 }
