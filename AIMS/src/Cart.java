@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<DigitalVideoDisc> itemsOrdered = new ArrayList<DigitalVideoDisc>(MAX_NUMBERS_ORDERED);
+    private static ArrayList<DigitalVideoDisc> itemsOrdered = new ArrayList<DigitalVideoDisc>(MAX_NUMBERS_ORDERED);
 
 
     public int qtyOrdered(){
@@ -53,7 +53,20 @@ public class Cart {
         }
         System.out.println("Total cost: " + this.totalCost());
     }
-    public boolean isMatch(DigitalVideoDisc dvd){
-        return true;
+    public static boolean isMatch(int id){
+        for (int i=0; i<itemsOrdered.size(); i++){
+            if (id == itemsOrdered.get(i).getId()){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean isMatch(String title) {
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            if (title.equals(itemsOrdered.get(i).getTitle())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

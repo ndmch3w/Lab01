@@ -20,6 +20,8 @@ public class Aims {
         anOrder.showBill();
 
         System.out.println("Number of discs: " + DigitalVideoDisc.nbDigitalVideoDisc);
-        System.out.println("Number of discs: " + DigitalVideoDisc.nbDigitalVideoDisc);
+
+        System.out.println(Cart.isMatch(3));
+        System.out.println(Cart.isMatch("Aladin"));
     }
 }
