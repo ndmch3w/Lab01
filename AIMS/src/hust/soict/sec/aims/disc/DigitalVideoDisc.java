@@ -1,3 +1,5 @@
+package hust.soict.sec.aims.disc;
+
 public class DigitalVideoDisc {
     //Constructors
     public DigitalVideoDisc(String title, String category, String director, int length, double cost) {

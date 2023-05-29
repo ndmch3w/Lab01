@@ -1,3 +1,8 @@
+package hust.soict.sec.aims.store;
+
+import hust.soict.sec.aims.disc.DigitalVideoDisc;
+import hust.soict.sec.aims.store.Store;
+
 public class StoreTest {
     public static void main(String[] args){
         DigitalVideoDisc dvd4 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95);

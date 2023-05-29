@@ -1,3 +1,7 @@
+package hust.soict.sec.aims.cart;
+
+import hust.soict.sec.aims.disc.DigitalVideoDisc;
+
 import java.util.ArrayList;
 
 public class Cart {
@@ -32,7 +36,7 @@ public class Cart {
             System.out.println("Remove 1 disc successfully (If you want to remove 2 or more same discs, "
                     + "please continue removing)");
         }else {
-            System.out.println("Cart has no disc");
+            System.out.println("hust.soict.sec.aims.cart.Cart has no disc");
         }
     }
     public double totalCost() {

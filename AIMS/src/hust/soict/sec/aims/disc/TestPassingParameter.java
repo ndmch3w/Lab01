@@ -1,3 +1,7 @@
+package hust.soict.sec.aims.disc;
+
+import hust.soict.sec.aims.disc.DigitalVideoDisc;
+
 public class TestPassingParameter {
 
     public static void main(String[] args) {
