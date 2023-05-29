@@ -1,4 +1,4 @@
-package hust.soict.sec.aims.disc;
+package hust.soict.sec.test;
 
 import hust.soict.sec.aims.disc.DigitalVideoDisc;
 
