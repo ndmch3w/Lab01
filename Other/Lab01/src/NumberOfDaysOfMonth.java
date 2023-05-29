@@ -2,9 +2,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class NormalYear{
-}
-
 public class NumberOfDaysOfMonth {
     public static void main(String[] args) {
         ArrayList<String> jan = new ArrayList<>(Arrays.asList("January", "Jan", "Jan.", "1"));
