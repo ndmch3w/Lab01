@@ -57,6 +57,8 @@ public class Cart {
         }
         System.out.println("Total cost: " + this.totalCost());
     }
+
+    // To search DVD by id and by title in cart
     public static boolean isMatch(int id){
         for (int i=0; i<itemsOrdered.size(); i++){
             if (id == itemsOrdered.get(i).getId()){

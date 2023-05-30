@@ -81,7 +81,7 @@ public class DigitalVideoDisc {
         this.cost = cost;
     }
 
-    public boolean isSame(DigitalVideoDisc disc) {
+    public boolean equals(DigitalVideoDisc disc) {
         if (this.title.equals(disc.title) && this.category.equals(disc.category) &&
                 this.director.equals(disc.director) && this.length==disc.length && this.cost==disc.cost) {
             return true;
