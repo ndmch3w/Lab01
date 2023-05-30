@@ -10,6 +10,7 @@ public class NoGarbage {
 
         inputBytes = Files.readAllBytes(Paths.get(filename));
         startTime = System.currentTimeMillis();
+        // Write faster with StringBuffer
         StringBuffer buf = new StringBuffer();
         for (byte b : inputBytes){
             buf.append((char)b);
