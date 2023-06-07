@@ -2,9 +2,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-class NormalYear{
-}
-
 public class NumberOfDaysOfMonth {
     public static void main(String[] args) {
         ArrayList<String> jan = new ArrayList<>(Arrays.asList("January", "Jan", "Jan.", "1"));
@@ -20,7 +17,7 @@ public class NumberOfDaysOfMonth {
         ArrayList<String> nov = new ArrayList<>(Arrays.asList("November", "Nov", "Nov.", "11"));
         ArrayList<String> dec = new ArrayList<>(Arrays.asList("December", "Dec", "Dec.", "12"));
 
-
+        // Place all valid inputs in a ArrayList
         ArrayList<String> validInput = new ArrayList<>();
         validInput.addAll(jan);
         validInput.addAll(feb);
@@ -38,12 +35,14 @@ public class NumberOfDaysOfMonth {
         Scanner sc = new Scanner(System.in);
         String month;
         int year;
+
         System.out.println("Input month: ");
         month = sc.nextLine();
         while(validInput.contains(month) == false) {
             System.out.println("Invalid month input. Please input again: ");
             month = sc.nextLine();
         }
+
         System.out.println("Input year: ");
         year = sc.nextInt();
 
