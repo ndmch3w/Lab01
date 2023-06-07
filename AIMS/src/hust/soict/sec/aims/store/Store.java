@@ -1,6 +1,6 @@
 package hust.soict.sec.aims.store;
 
-import hust.soict.sec.aims.disc.DigitalVideoDisc;
+import hust.soict.sec.aims.media.DigitalVideoDisc;
 
 import java.util.ArrayList;
 
