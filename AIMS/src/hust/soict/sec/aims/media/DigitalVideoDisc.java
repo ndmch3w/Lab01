@@ -36,15 +36,6 @@ public class DigitalVideoDisc extends Disc implements Playable{
     // Attributes
     public static int nbDigitalVideoDisc = 0;
 
-    public boolean equals(DigitalVideoDisc disc) {
-        if (this.getTitle().equals(disc.getTitle()) && this.getCategory().equals(disc.getCategory()) &&
-                this.getDirector().equals(disc.getDirector()) && this.getLength() == disc.getLength() && this.getCost() ==
-                disc.getCost()) {
-            return true;
-        }
-        return false;
-    }
-
     @Override
     public void play() {
         System.out.println("DVD " + this.getTitle() + " is playing");

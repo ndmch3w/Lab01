@@ -33,6 +33,18 @@ public abstract class Media {
         return cost;
     }
 
+    // Constructors
     public Media(){}
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Media sampleMedia = (Media) obj;
+        if (title.equals(sampleMedia.getTitle())){
+            return true;
+        }
+        return false;
+    }
 }
