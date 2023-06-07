@@ -1,6 +1,6 @@
 package hust.soict.sec.aims.media;
 
-public class DigitalVideoDisc extends Disc{
+public class DigitalVideoDisc extends Disc implements Playable{
     //Constructors
     public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
         super(length, director);
@@ -43,5 +43,10 @@ public class DigitalVideoDisc extends Disc{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("DVD " + this.getTitle() + " is playing");
     }
 }
