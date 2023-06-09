@@ -1,6 +1,6 @@
 package hust.soict.sec.aims.media;
 
-public class Disc extends Media{
+public class Disc extends Media implements Playable{
     private int length;
     private String director;
 
@@ -20,7 +20,9 @@ public class Disc extends Media{
     }
 
     // Constructors
-    public Disc() {}
+    public Disc() {
+        super();
+    }
     public Disc(int length) {
         this.length = length;
     }
@@ -30,5 +32,8 @@ public class Disc extends Media{
     public Disc(int length, String director){
         this.length = length;
         this.director = director;
+    }
+    public void play(){
+        System.out.println("Media " + getTitle() + " is playing");
     }
 }

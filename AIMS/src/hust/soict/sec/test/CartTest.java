@@ -4,6 +4,7 @@ import hust.soict.sec.aims.cart.Cart;
 import hust.soict.sec.aims.media.DigitalVideoDisc;
 
 public class CartTest {
+    /*
     public static void main(String[] args){
         Cart cart = new Cart();
 
@@ -14,4 +15,5 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99);
         cart.addMedia(dvd3);
     }
+     */
 }

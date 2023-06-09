@@ -3,6 +3,7 @@ package hust.soict.sec.aims.store;
 import hust.soict.sec.aims.media.DigitalVideoDisc;
 import hust.soict.sec.aims.media.Media;
 
+import java.lang.module.ModuleDescriptor;
 import java.util.ArrayList;
 
 public class Store {
@@ -11,10 +12,30 @@ public class Store {
     public String getItemsInStore(){
         return itemsInStore.toString();
     }
-    public void addDVD(DigitalVideoDisc dvd){
-        itemsInStore.add(dvd);
+    public void addMedia(Media m){
+        itemsInStore.add(m);
+        System.out.println("Add successfully");
     }
-    public void removeDVD(DigitalVideoDisc dvd){
-        itemsInStore.remove(dvd);
+    public void removeMedia(Media m){
+        itemsInStore.remove(m);
+    }
+    public boolean isInStore(String inputTitle){
+        for (Media m : itemsInStore){
+            if (m.getTitle().equals(inputTitle)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public Media returnMedia(String inputTitle){
+        for (Media m : itemsInStore){
+            if (m.getTitle().equals(inputTitle)){
+                return m;
+            }
+        }
+        return null;
+    }
+    public void showItemInfo(Media m){
+        System.out.println(m.toString());
     }
 }
