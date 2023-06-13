@@ -28,4 +28,16 @@ public class Track implements Playable{
     public void play() {
         System.out.println("Track " + title + " is playing");
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Track sampleTrack = (Track) obj;
+        if (title.equals(sampleTrack.getTitle()) && length == sampleTrack.getLength()){
+            return true;
+        }
+        return false;
+    }
+
 }
