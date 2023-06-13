@@ -2,6 +2,8 @@ package hust.soict.sec.control_options;
 
 import hust.soict.sec.aims.Aims;
 import hust.soict.sec.aims.cart.Cart;
+import hust.soict.sec.aims.media.CompactDisc;
+import hust.soict.sec.aims.media.DigitalVideoDisc;
 import hust.soict.sec.aims.media.Disc;
 import hust.soict.sec.aims.media.Media;
 import hust.soict.sec.aims.store.Store;
@@ -22,10 +24,12 @@ public class SeeCurrentCart {
                     String filterOption = sc.next();
 
                     if (filterOption.equals("id")){
+                        System.out.println("Cart:");
                         for (Media m : cart.getItemsOrdered()) {
                             System.out.println(m.getId());
                         }
                     }else if (filterOption.equals("title")){
+                        System.out.println("Cart:");
                         for (Media m : cart.getItemsOrdered()){
                             System.out.println(m.getTitle());
                         }
@@ -38,11 +42,13 @@ public class SeeCurrentCart {
                     String sortOption = sc.next();
 
                     if (sortOption.equals("title")){
+                        System.out.println("Cart:");
                         Collections.sort(cart.getItemsOrdered(), Media.COMPARE_BY_TITLE_COST);
                         for (Media m : cart.getItemsOrdered()){
                             System.out.println(m.toString());
                         }
                     }else if (sortOption.equals("cost")){
+                        System.out.println("Cart:");
                         Collections.sort(cart.getItemsOrdered(), Media.COMPARE_BY_COST_TITLE);
                         for (Media m : cart.getItemsOrdered()){
                             System.out.println(m.toString());
@@ -65,9 +71,8 @@ public class SeeCurrentCart {
                     String inputTitle2 = sc.nextLine();
 
                     Media userAskMedia2 = cart.returnMedia(inputTitle2);
-
-                    if (userAskMedia2.getClass().getName().equals("DigitalVideoDisc")
-                            || userAskMedia2.getClass().getName().equals("CompactDisc")){
+                    if (userAskMedia2 != null && (userAskMedia2 instanceof CompactDisc
+                            || userAskMedia2 instanceof DigitalVideoDisc)){
                         ((Disc)userAskMedia2).play();
                     }else{
                         System.out.println("Only DVDs and CDs can be played");

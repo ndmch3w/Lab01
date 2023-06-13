@@ -65,9 +65,6 @@ public class Aims {
         Scanner sc = new Scanner(System.in);
 
         int mainMenuChoice = 999;
-        int storeMenuChoice = 999;
-        int mediaDetailMenuChoice = 999;
-        int cartMenuChoice = 999;
 
         while (mainMenuChoice != 0) {
             showMenu();
@@ -77,6 +74,7 @@ public class Aims {
                 case 0:
                     return;  // Exit the program
                 case 1: // View store (main menu)
+                    int storeMenuChoice = 999;
                     while (storeMenuChoice != 0) {
                         storeMenu();
                         storeMenuChoice = sc.nextInt();
@@ -91,18 +89,23 @@ public class Aims {
                                 if (store.isInStore(inputTitle)){
                                     Media userAskMedia = store.returnMedia(inputTitle);
                                     store.showItemInfo(userAskMedia);
-                                    while (mediaDetailMenuChoice != 0){
+
+                                    int mediaDetailsMenuChoice = 999;
+
+                                    while (mediaDetailsMenuChoice != 0){
                                         mediaDetailsMenu();
-                                        mediaDetailMenuChoice = sc.nextInt();
-                                        switch (mediaDetailMenuChoice){
+                                        mediaDetailsMenuChoice = sc.nextInt();
+                                        switch (mediaDetailsMenuChoice){
                                             case 0:
                                                 break;
                                             case 1: // Add to cart (media detail menu)
                                                 cart.addMedia(userAskMedia);
+                                                System.out.println("Number of items in cart: " + cart.getCartSize());
                                                 break;
                                             case 2: // Play (media detail menu)
-                                                if (userAskMedia.getClass().getName().equals("DigitalVideoDisc")
-                                                || userAskMedia.getClass().getName().equals("CompactDisc")){
+                                                if (userAskMedia != null &&
+                                                        (userAskMedia instanceof DigitalVideoDisc
+                                                                || userAskMedia instanceof CompactDisc)){
                                                     ((Disc)userAskMedia).play();
                                                 }else{
                                                     System.out.println("Only DVDs and CDs can be played");
@@ -145,7 +148,8 @@ public class Aims {
                                 }
 
                                 break;
-                            case 4:
+                            case 4: // See current cart (store menu)
+                                int cartMenuChoice = 999;
                                 SeeCurrentCart seeCurrentCart = new SeeCurrentCart();
                                 seeCurrentCart.show(cart, cartMenuChoice, sc);
                                 break;
@@ -159,10 +163,13 @@ public class Aims {
 
                     UpdateStore updateStore = new UpdateStore();
                     if (updateStoreOption.equals("add")) {
-                        updateStore.add(sc, store);} else if (updateStoreOption.equals("remove")) {
+                        updateStore.add(sc, store);
+                    } else if (updateStoreOption.equals("remove")) {
                         updateStore.remove(sc, store);}
+                    //storeMenuChoice = 999;
                     break;
                 case 3: // See current cart (main menu)
+                    int cartMenuChoice = 999;
                     SeeCurrentCart seeCurrentCart = new SeeCurrentCart();
                     seeCurrentCart.show(cart, cartMenuChoice, sc);
                     break;

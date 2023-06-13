@@ -12,6 +12,8 @@ public class Media {
     private double cost;
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+    public static int nbMedia = 0;
+
 
 
     // Setters
@@ -44,13 +46,17 @@ public class Media {
 
     // Constructor
     public Media() {
+        nbMedia++;
+        this.setId(nbMedia);
     }
     public Media(String title){
         this.title = title;
+        nbMedia++;
+        this.setId(nbMedia);
     }
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) {
+        if (obj == null || this.getClass() != obj.getClass()) {
             return false;
         }
         Media sampleMedia = (Media) obj;
@@ -78,7 +84,7 @@ public class Media {
         Collections.sort(mediae, Media.COMPARE_BY_TITLE_COST);
         System.out.println("Sort by title-cost:");
         for (Media m : mediae){
-            System.out.println(m.toString());
+            System.out.println(m);
         }
 
         // Sort by cost-title

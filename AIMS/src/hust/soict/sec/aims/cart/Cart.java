@@ -30,6 +30,7 @@ public class Cart {
             System.out.println("Cart is empty");
         }else if (itemsOrdered.contains(sampleMedia)){
             itemsOrdered.remove(sampleMedia);
+            System.out.println("Remove successful");
         }else{
             System.out.println("Media not found");
         }
