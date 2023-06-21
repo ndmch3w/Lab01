@@ -32,7 +32,8 @@ public class DigitalVideoDisc extends Disc implements Playable{
     }
 
     @Override
-    public void play() {
-        System.out.println("DVD " + this.getTitle() + " is playing");
+    public String play() {
+        //System.out.println("DVD " + this.getTitle() + " is playing");
+        return ("DVD " + this.getTitle() + " is playing");
     }
 }

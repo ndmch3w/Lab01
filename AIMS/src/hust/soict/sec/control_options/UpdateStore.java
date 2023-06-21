@@ -66,7 +66,7 @@ public class UpdateStore {
 
     public void remove(Scanner sc, Store store){
         System.out.println("List of items in store:");
-        store.getItemsInStore();
+        store.printItemsInStore();
 
         System.out.println("Please enter the title of the Media you want to remove:");
         String inputTitle = sc.next();

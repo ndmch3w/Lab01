@@ -2,18 +2,20 @@ package hust.soict.sec.aims.cart;
 
 import hust.soict.sec.aims.media.DigitalVideoDisc;
 import hust.soict.sec.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>(MAX_NUMBERS_ORDERED);
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     public int getCartSize(){
         return itemsOrdered.size();
     }
 
-    public ArrayList<Media> getItemsOrdered() {
+    public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
 

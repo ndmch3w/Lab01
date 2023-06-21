@@ -25,8 +25,9 @@ public class Track implements Playable{
     }
 
     @Override
-    public void play() {
-        System.out.println("Track " + title + " is playing");
+    public String play() {
+        //System.out.println("Track " + title + " is playing");
+        return ("Track " + title + " is playing");
     }
     @Override
     public boolean equals(Object obj) {

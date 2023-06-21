@@ -9,9 +9,14 @@ import java.util.ArrayList;
 public class Store {
     private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    public String getItemsInStore(){
+    public String printItemsInStore(){
         return itemsInStore.toString();
     }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
+
     public void addMedia(Media m){
         itemsInStore.add(m);
         System.out.println("Add successfully");
@@ -20,6 +25,9 @@ public class Store {
         itemsInStore.remove(m);
     }
     public boolean isInStore(String inputTitle){
+        for (Media m : itemsInStore){
+            System.out.println(m.getTitle());
+        }
         for (Media m : itemsInStore){
             if (m.getTitle().equals(inputTitle)){
                 return true;

@@ -16,7 +16,7 @@ public class CompactDisc extends Disc implements Playable{
         super.nbMedia++;
         this.setId(nbMedia);
     }
-    public CompactDisc(int length, String director, String artist, ArrayList<Track> tracks) {
+    public CompactDisc(String title, int length, String director, String artist, ArrayList<Track> tracks) {
         super(length, director);
         this.artist = artist;
         this.tracks = tracks;
@@ -57,11 +57,13 @@ public class CompactDisc extends Disc implements Playable{
     }
 
     @Override
-    public void play() {
+    public String play() {
         System.out.println("Compact disc information:");
         System.out.println("Title: " + this.getTitle() + ", Artist:" + artist);
+        StringBuilder res = new StringBuilder();
         for (Track track : tracks){
-            track.play();
+            res.append(track.play() + "\n");
         }
+        return res.toString();
     }
 }

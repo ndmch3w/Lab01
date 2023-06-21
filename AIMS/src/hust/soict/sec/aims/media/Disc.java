@@ -33,7 +33,8 @@ public class Disc extends Media implements Playable{
         this.length = length;
         this.director = director;
     }
-    public void play(){
-        System.out.println("Media " + getTitle() + " is playing");
+    public String play(){
+        //System.out.println("Media " + getTitle() + " is playing");
+        return ("Media " + getTitle() + " is playing");
     }
 }
